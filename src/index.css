@@ -1,0 +1,80 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html, body {
+    width: 100vw;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    background-color: #0D0F12;
+    color: #e2e2e6;
+  }
+  
+  body {
+    overscroll-behavior-y: none;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .pb-safe {
+    padding-bottom: env(safe-area-inset-bottom, 12px);
+  }
+
+  .pt-safe {
+    padding-top: env(safe-area-inset-top, 0px);
+  }
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.no-scrollbar {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+/* Custom Leaflet Map styling for Cyberpunk Obsidian Dark */
+.leaflet-container {
+  background-color: #0c0e11 !important;
+  font-family: 'Inter', sans-serif !important;
+}
+
+/* GPU-accelerated Cyberpunk Dark Mode for Live OpenStreetMap tiles - NO API KEY REQUIRED */
+.cyberpunk-dark-tiles .leaflet-tile {
+  filter: invert(100%) hue-rotate(180deg) brightness(85%) contrast(125%) saturate(35%);
+  -webkit-filter: invert(100%) hue-rotate(180deg) brightness(85%) contrast(125%) saturate(35%);
+}
+
+.custom-tokyo-pin {
+  background: transparent !important;
+  border: none !important;
+}
+
+.leaflet-bar a {
+  background-color: #1a1c1f !important;
+  color: #e2e2e6 !important;
+  border-bottom: 1px solid #282a2d !important;
+}
+
+.leaflet-bar a:hover {
+  background-color: #282a2d !important;
+  color: #ff5070 !important;
+}
+
+/* Compact attribution */
+.leaflet-control-attribution {
+  background-color: rgba(17, 19, 23, 0.75) !important;
+  color: #8A8F99 !important;
+  font-size: 9px !important;
+  padding: 2px 6px !important;
+  border-radius: 4px !important;
+}
+
+.leaflet-control-attribution a {
+  color: #ffb2b9 !important;
+  text-decoration: none !important;
+}
